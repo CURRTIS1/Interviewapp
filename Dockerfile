@@ -1,9 +1,9 @@
 FROM python:3
 
-COPY app.py ./
+COPY . ./app/
 
-RUN pip install flask
+RUN pip install -r ./app/requirements.txt
 
-ENV FLASK_APP=app.py
+EXPOSE 80
 
-CMD [ "flask", "run", "-h", "0.0.0.0", "-p", "80" ]
+CMD [ "python", "./app/app.py" ]

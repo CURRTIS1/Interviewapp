@@ -1,0 +1,16 @@
+version: '3.4'
+services:
+  docker-flask:
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: any
+        delay: 5s
+    build: .
+    command: python3 /app/app.py
+    volumes:
+      - .:/app
+    ports:
+      - "80:80"
+
+      
