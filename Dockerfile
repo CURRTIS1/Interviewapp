@@ -4,6 +4,6 @@ COPY app.py ./
 
 COPY requirements.txt ./requirements.txt
 
-RUN pip install ./requirements.txt
+RUN pip install flask
 
 CMD [ "python", "./app.py" ]
